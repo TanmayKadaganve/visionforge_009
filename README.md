@@ -61,7 +61,7 @@ Set these Render environment variables:
 - `JWT_SECRET` — a unique random secret of at least 32 characters. The Blueprint generates one.
 - `NODE_ENV=production` and `COOKIE_SAME_SITE=lax` (the Blueprint sets both; browser API calls use the Vercel same-origin proxy).
 
-The service is named `rideflow-api`; Vercel proxies `/api/*` to `https://rideflow-api.onrender.com/api/*` using `frontend/vercel.json`. If Render assigns a different hostname, update that rewrite destination and redeploy Vercel. `CLIENT_URL` must match the final Vercel production domain; if it changes, update the Render setting and restart the service.
+Vercel proxies `/api/*` to `https://rideflow-api-vp3e.onrender.com/api/*` using `frontend/vercel.json`. If Render assigns a different hostname, update that rewrite destination and redeploy Vercel. `CLIENT_URL` must match the final Vercel production domain; if it changes, update the Render setting and restart the service.
 
 ### 3. Configure Google OAuth and Atlas
 
