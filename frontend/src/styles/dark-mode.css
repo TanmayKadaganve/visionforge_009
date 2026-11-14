@@ -1,0 +1,122 @@
+.theme-toggle{width:36px;height:36px;flex:0 0 auto;display:inline-grid;place-items:center;border:1px solid #dfe5ed;border-radius:9px;background:#fff;color:#43536b;cursor:pointer;transition:background .16s,border-color .16s,color .16s}.theme-toggle:hover{border-color:#a9bddf;color:#2866df}.auth-topbar-actions{display:flex;align-items:center;gap:14px}.auth-topbar-actions .auth-home-link{white-space:nowrap}
+
+[data-theme="dark"]{color-scheme:dark;--navy:#e5edf7;--blue:#6fa1ff;--teal:#44d0b5;--slate:#a2aec0;--line:#2a374b;--pale:#111b2b;background:#0e1522;color:#e5edf7}
+[data-theme="dark"] body{background:#0e1522;color:#e5edf7}
+[data-theme="dark"] .theme-toggle{border-color:#35445b;background:#1a2638;color:#e4ebf5}
+[data-theme="dark"] .theme-toggle:hover{border-color:#6e9be7;color:#a9c8ff}
+[data-theme="dark"] .navbar{background:#111b2bee;border-color:#27354a}
+[data-theme="dark"] .brand{color:#f0f4fa}
+[data-theme="dark"] .nav-links>a,[data-theme="dark"] .login-link{color:#c1ccda}
+[data-theme="dark"] .nav-links{background:#111b2b}
+[data-theme="dark"] .menu-toggle{background:#1b293d;border-color:#35445b;color:#e7edf6}
+[data-theme="dark"] .hero{background:#0e1522;color:#e5edf7}
+[data-theme="dark"] .hero h1,[data-theme="dark"] .section-heading h2,[data-theme="dark"] .journey-heading h3,[data-theme="dark"] .step h4,[data-theme="dark"] .feature-card h3{color:#e8eef7}
+[data-theme="dark"] .hero-copy>p,[data-theme="dark"] .hero-note,[data-theme="dark"] .scroll-cue,[data-theme="dark"] .section-heading>p,[data-theme="dark"] .step p,[data-theme="dark"] .feature-card p{color:#a6b2c4}
+[data-theme="dark"] .hero-visual{background-color:#182438;border-color:#2b3a50;filter:saturate(.78) brightness(.82)}
+[data-theme="dark"] .hero-visual .match-card,[data-theme="dark"] .hero-visual .eta-card{background:#1b293d;border-color:#32415a}
+[data-theme="dark"] .hero-visual .match-card strong,[data-theme="dark"] .hero-visual .eta-card strong{color:#edf3fb}
+[data-theme="dark"] .trust-strip,[data-theme="dark"] .how-section{background:#111a29;border-color:#263349}
+[data-theme="dark"] .trust-strip{border-color:#263349}
+[data-theme="dark"] .trust-item{color:#c5cfdd}
+[data-theme="dark"] .trust-item>span{background:#1c2b40;color:#8bb5ff}
+[data-theme="dark"] .journey,[data-theme="dark"] .feature-card{background:#172235;border-color:#2a394f}
+[data-theme="dark"] .journey-driver{background:#162631}
+[data-theme="dark"] .features-section{background:#0e1522}
+[data-theme="dark"] .step-num{background:#24334a;color:#b4c0d0}
+[data-theme="dark"] .user-cta{background:#0e1522}
+[data-theme="dark"] .passenger-card{background:#17263b;border-color:#2b3f5c}
+[data-theme="dark"] .user-card h2{color:#edf3fb}
+[data-theme="dark"] .user-card p{color:#a8b6c9}
+[data-theme="dark"] .user-label{color:#a0b0c5}
+[data-theme="dark"] .decor-route{opacity:.25}
+[data-theme="dark"] .footer{border-top:1px solid #263349}
+[data-theme="dark"] .button-quiet{background:#26354b;color:#e3ebf6}
+[data-theme="dark"] .button-light{background:#26354b;color:#eff4fb}
+
+[data-theme="dark"] .auth-page{background:#0e1522;color:#e6edf7}
+[data-theme="dark"] .auth-layout{background:#141f30;border-color:#2b394f;box-shadow:0 20px 55px #0003}
+[data-theme="dark"] .auth-home-link{color:#b8c4d5}
+[data-theme="dark"] .auth-welcome h2,[data-theme="dark"] .auth-welcome p{color:#e3eaf4}
+[data-theme="dark"] .auth-welcome p{color:#a9b6c7}
+[data-theme="dark"] .auth-tabs{border-color:#2d3a4f}
+[data-theme="dark"] .auth-tabs a{color:#a8b5c7}
+[data-theme="dark"] .auth-tabs a.active{color:#91b7ff;border-color:#76a2f5}
+[data-theme="dark"] .role-choice{background:#19263a;border-color:#304058;color:#c4cfde}
+[data-theme="dark"] .role-choice.selected{background:#1c3152;border-color:#5a8be0;color:#a9c9ff}
+[data-theme="dark"] .form-field>span:first-child,[data-theme="dark"] .driver-form-heading{color:#cbd5e2}
+[data-theme="dark"] .form-field input,[data-theme="dark"] .form-field select,[data-theme="dark"] .password-input input{background:#101a29;border-color:#35445a;color:#e6edf7}
+[data-theme="dark"] .form-field input::placeholder{color:#718097}
+[data-theme="dark"] .auth-switch,[data-theme="dark"] .auth-secure-note{color:#98a7bc}
+
+[data-theme="dark"] .passenger-page{background:#0e1522;color:#e5edf7}
+[data-theme="dark"] .passenger-header{background:#131e2e;border-color:#29374c}
+[data-theme="dark"] .passenger-user{color:#c7d1df}
+[data-theme="dark"] .passenger-map-card,[data-theme="dark"] .passenger-booking-card,[data-theme="dark"] .nearby-section,[data-theme="dark"] .passenger-history-section,[data-theme="dark"] .ride-progress-card{background:#151f30;border-color:#2a394e;box-shadow:0 8px 25px #0002}
+[data-theme="dark"] .passenger-map-card-head h2,[data-theme="dark"] .booking-card-heading h2,[data-theme="dark"] .passenger-section-head h2,[data-theme="dark"] .ride-progress-head h3{color:#e6edf7}
+[data-theme="dark"] .passenger-map-card-head p,[data-theme="dark"] .passenger-section-head p,[data-theme="dark"] .passenger-page-title p{color:#a1aec0}
+[data-theme="dark"] .passenger-role-chip{background:#19263a;border-color:#334259;color:#c1cddd}
+[data-theme="dark"] .passenger-location-label{color:#c9d3e1}
+[data-theme="dark"] .location-search-row,[data-theme="dark"] .place-results,[data-theme="dark"] .nearby-driver-card,[data-theme="dark"] .ride-history-card{background:#111b2a;border-color:#2e3d52}
+[data-theme="dark"] .location-search-row input{background:#111b2a;color:#e6edf7}
+[data-theme="dark"] .location-search-button{background:#1b293e;border-color:#2e3d52}
+[data-theme="dark"] .location-actions button{color:#a9bddc}
+[data-theme="dark"] .place-results button{background:#162235;border-color:#2c3b50;color:#c6d0de}
+[data-theme="dark"] .place-results button:hover{background:#20314a}
+[data-theme="dark"] .selected-location,[data-theme="dark"] .nearby-driver-main>strong,[data-theme="dark"] .nearby-driver-metrics strong,[data-theme="dark"] .history-route,[data-theme="dark"] .history-route strong{color:#d7e0ec}
+[data-theme="dark"] .route-estimate,[data-theme="dark"] .vehicle-category-picker{background:#111b2b;border-color:#2d3b50}
+[data-theme="dark"] .estimate-metrics strong,[data-theme="dark"] .ride-progress-metrics strong{color:#edf3fb}
+[data-theme="dark"] .vehicle-category-option{background:#1a273a;border-color:#33435a;color:#c5d0df}
+[data-theme="dark"] .vehicle-category-option strong{color:#cbd7e6}
+[data-theme="dark"] .vehicle-category-option.selected{background:#20385b;border-color:#6898e8}
+[data-theme="dark"] .nearby-driver-card.nearest-driver{background:#152d2c;border-color:#2b5951}
+[data-theme="dark"] .no-drivers-card,[data-theme="dark"] .history-empty{background:#111b2b;border-color:#344259;color:#b3c0d1}
+[data-theme="dark"] .ride-progress-route strong,[data-theme="dark"] .ride-driver-line{color:#bac7d7}
+[data-theme="dark"] .ride-timeline-step>span{background:#172337;border-color:#506078}
+[data-theme="dark"] .map-click-hint{background:#101a29e8;color:#e0e8f3}
+
+[data-theme="dark"] .driver-app{--dnavy:#101b2c;--dink:#e4ebf5;--dmuted:#a3b0c2;--dborder:#2a394f;--dback:#0e1522;background:var(--dback);color:var(--dink)}
+[data-theme="dark"] .driver-topbar,[data-theme="dark"] .driver-stat,[data-theme="dark"] .driver-panel,[data-theme="dark"] .driver-profile-modal{background:#151f30;border-color:#2a394f;color:#e2eaf5}
+[data-theme="dark"] .driver-breadcrumb,[data-theme="dark"] .driver-panel-head h2,[data-theme="dark"] .driver-stat strong,[data-theme="dark"] .profile-identity h3,[data-theme="dark"] .profile-detail-grid strong,[data-theme="dark"] .active-passenger{color:#e2eaf5}
+[data-theme="dark"] .driver-panel-head small,[data-theme="dark"] .driver-stat small,[data-theme="dark"] .driver-stat div>span,[data-theme="dark"] .driver-welcome p,[data-theme="dark"] .driver-footer>span{color:#a3b0c2}
+[data-theme="dark"] .driver-panel-head,[data-theme="dark"] .history-table th,[data-theme="dark"] .history-table td,[data-theme="dark"] .profile-identity{border-color:#2b394f}
+[data-theme="dark"] .driver-request,[data-theme="dark"] .zone-card,[data-theme="dark"] .pooling-card,[data-theme="dark"] .history-panel,[data-theme="dark"] .earnings-panel{background:#172235;border-color:#2d3c52}
+[data-theme="dark"] .driver-request strong,[data-theme="dark"] .request-route strong,[data-theme="dark"] .zone-title>strong,[data-theme="dark"] .table-passenger,[data-theme="dark"] .table-route,[data-theme="dark"] .history-table td strong{color:#dbe4f0}
+[data-theme="dark"] .driver-map-legend{background:#111b2be8;color:#d1dbe8}
+[data-theme="dark"] .driver-profile-modal input{background:#101a29;border-color:#35445a;color:#e6edf7}
+[data-theme="dark"] .driver-profile-modal>label{color:#c5cfdd}
+[data-theme="dark"] .driver-modal-head>button,[data-theme="dark"] .driver-modal-actions button{background:#202d42;border-color:#36465e;color:#cbd5e2}
+[data-theme="dark"] .driver-modal-actions button:last-child{background:#286bdd;border-color:#286bdd;color:#fff}
+
+[data-theme="dark"] .admin-app{--ink:#e1e9f4;--muted:#a0aec1;--line:#2a394f;--bg:#0e1522;background:#0e1522;color:#e1e9f4}
+[data-theme="dark"] .admin-topbar,[data-theme="dark"] .admin-chart-card,[data-theme="dark"] .admin-panel,[data-theme="dark"] .admin-trace-modal{background:#151f30;border-color:#2a394f;color:#e0e8f3}
+[data-theme="dark"] .admin-top-title,[data-theme="dark"] .admin-live-status,[data-theme="dark"] .admin-data-stamp,[data-theme="dark"] .admin-section-heading p{color:#a1aec0}
+[data-theme="dark"] .admin-top-title b,[data-theme="dark"] .admin-page-heading h1,[data-theme="dark"] .admin-section-heading h2,[data-theme="dark"] .admin-chart-title h3,[data-theme="dark"] .admin-panel-heading h3,[data-theme="dark"] .admin-trace-modal h2{color:#e1e9f4}
+[data-theme="dark"] .admin-page-heading p,[data-theme="dark"] .admin-kpi-copy small,[data-theme="dark"] .admin-kpi-copy span,[data-theme="dark"] .admin-panel-heading small{color:#9eacc0}
+[data-theme="dark"] .admin-kpi{background:#151f30;border-color:#2a394f}
+[data-theme="dark"] .admin-kpi-copy strong{color:#edf3fa}
+[data-theme="dark"] .admin-icon-btn,[data-theme="dark"] .admin-date-field input,[data-theme="dark"] .admin-secondary-btn,[data-theme="dark"] .admin-pagination button{background:#1b293d;border-color:#35445b;color:#c5d0df}
+[data-theme="dark"] .admin-date-field{color:#a9b6c8}
+[data-theme="dark"] .admin-table th{background:#192538;color:#a6b3c5;border-color:#2a394f}
+[data-theme="dark"] .admin-table td{color:#bac6d5;border-color:#29384c}
+[data-theme="dark"] .admin-table td strong,[data-theme="dark"] .admin-table td .cell-primary,[data-theme="dark"] .admin-user-card strong{color:#e0e8f3}
+[data-theme="dark"] .admin-search,[data-theme="dark"] .admin-status-filter{background:#111b2b;border-color:#35445a;color:#aab7c8}
+[data-theme="dark"] .admin-search input,[data-theme="dark"] .admin-status-filter select{background:#111b2b;color:#e1e9f4}
+[data-theme="dark"] .admin-empty>span,[data-theme="dark"] .admin-panel-count,[data-theme="dark"] .admin-method-badge{background:#202f46;color:#b7c9e7}
+[data-theme="dark"] .admin-empty strong,[data-theme="dark"] .admin-allocation-card-head button,[data-theme="dark"] .admin-trace-modal h3{color:#cad6e5}
+[data-theme="dark"] .admin-reassignment-list>button,[data-theme="dark"] .admin-request-row{background:#151f30;border-color:#29384c}
+[data-theme="dark"] .admin-reassignment-list strong,[data-theme="dark"] .admin-request-row strong{color:#d7e1ed}
+[data-theme="dark"] .admin-footer{border-color:#2a394f;color:#9daabd}
+[data-theme="dark"] .trace-ride-overview{background:#111b2b;border-color:#2a394f}
+[data-theme="dark"] .trace-ride-overview>span,[data-theme="dark"] .trace-allocation-head{color:#c0ccda}
+[data-theme="dark"] .trace-allocation{border-color:#2c3b50}
+[data-theme="dark"] .admin-error{background:#3a2427;border-color:#704044;color:#ffc4bf}
+
+@media(max-width:760px){.auth-topbar-actions{gap:9px}.auth-home-link{font-size:12px}.theme-toggle{width:34px;height:34px}}
+
+[data-theme="dark"] .placeholder-page{background:#0e1522;color:#e4ebf5}
+[data-theme="dark"] .placeholder-nav{border-color:#2a394f}
+[data-theme="dark"] .placeholder-back,[data-theme="dark"] .placeholder-content p{color:#aab7c8}
+[data-theme="dark"] .placeholder-symbol{background:#1b2b43;color:#90b6ff}
+[data-theme="dark"] .leaflet-popup-content-wrapper,[data-theme="dark"] .leaflet-popup-tip{background:#172235;color:#e0e8f3}
+[data-theme="dark"] .leaflet-control-attribution{background:#172235dd!important;color:#c0cada!important}
+[data-theme="dark"] .leaflet-control-attribution a{color:#9fc0ff!important}

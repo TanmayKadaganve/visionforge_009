@@ -1,0 +1,43 @@
+.driver-form-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 5px;
+  padding-top: 13px;
+  border-top: 1px solid #edf1f5;
+  color: #42536a;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.driver-form-heading svg { color: #2563eb; }
+
+.vehicle-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 13px 11px;
+}
+
+.form-field > select {
+  width: 100%;
+  height: 43px;
+  padding: 0 11px;
+  border: 1px solid #dfe6ef;
+  border-radius: 7px;
+  background: #fff;
+  color: #354358;
+  font: 400 14px Inter, system-ui, sans-serif;
+}
+
+.form-field > select:focus {
+  outline: none;
+  border-color: #79a0eb;
+  box-shadow: 0 0 0 3px #2563eb12;
+}
+
+.form-field > select:invalid { color: #a6b1bf; }
+
+@media (max-width: 420px) {
+  .vehicle-fields { grid-template-columns: 1fr; }
+}
+.google-auth-block{margin-top:3px}.google-auth-divider{display:flex;align-items:center;gap:10px;color:#98a3b1;font-size:11px;margin:15px 0}.google-auth-divider:before,.google-auth-divider:after{content:"";height:1px;background:#e9edf2;flex:1}.google-auth-button{min-height:40px;display:flex;justify-content:center}.google-auth-button>div{max-width:100%}.google-auth-hint{text-align:center;font-size:11px;color:#8b98a9;margin:8px 0 0}

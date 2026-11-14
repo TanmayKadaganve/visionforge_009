@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: rideflow-api
+    runtime: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: MONGODB_DB
+        value: rideflow
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CLIENT_URL
+        sync: false
+      - key: COOKIE_SAME_SITE
+        value: lax
+      - key: GOOGLE_CLIENT_ID
+        sync: false

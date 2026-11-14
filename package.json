@@ -1,0 +1,15 @@
+{
+  "name": "rideflow-workspace",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "preview": "npm --prefix frontend run preview",
+    "server": "node backend/server.js",
+    "seed:test-user": "npm --prefix backend run seed:test-user",
+    "seed:admin": "npm --prefix backend run seed:admin",
+    "db:up": "docker compose -f compose.yaml up -d mongodb",
+    "db:down": "docker compose -f compose.yaml down"
+  }
+}
