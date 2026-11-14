@@ -30,10 +30,10 @@ async function api(path) {
   return result
 }
 
-function Popup({ title, lines }) {
+function Popup(title, lines = []) {
   const node = document.createElement('div')
   const strong = document.createElement('strong'); strong.textContent = title; node.appendChild(strong)
-  lines.filter(Boolean).forEach(line => { const row = document.createElement('div'); row.textContent = line; node.appendChild(row) })
+  ;(Array.isArray(lines) ? lines : []).filter(Boolean).forEach(line => { const row = document.createElement('div'); row.textContent = line; node.appendChild(row) })
   return node
 }
 
