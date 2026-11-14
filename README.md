@@ -71,4 +71,10 @@ In MongoDB Atlas, add the Render service's outbound IP addresses to the project'
 
 ### 4. Create the admin account
 
-After Render is connected to Atlas, set `ADMIN_NAME`, `ADMIN_EMAIL`, `ADMIN_PHONE`, and a strong `ADMIN_PASSWORD` in the Render service environment, then run `npm run seed:admin` from the Render Shell. Remove `ADMIN_PASSWORD` from the service environment after the account is created.
+Render's Free web service does not provide dashboard Shell access. To create the production admin, set `ADMIN_NAME`, `ADMIN_EMAIL`, `ADMIN_PHONE`, `ADMIN_PASSWORD` (at least 12 characters), and the production Atlas `MONGODB_URI` in your local `backend/.env`. Temporarily add your current public IP to Atlas **Network Access → IP Access List** as well as Render's outbound IP ranges. From the project root, run:
+
+```powershell
+npm run seed:admin
+```
+
+Remove your temporary local IP access-list entry afterward; keep Render's ranges. Never commit or share the `.env` values.

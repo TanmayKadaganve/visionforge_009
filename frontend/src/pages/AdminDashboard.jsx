@@ -122,7 +122,20 @@ export default function AdminDashboard() {
     try {
       const params = new URLSearchParams(dateRange)
       const result = await api(`/api/admin/overview?${params}`)
-      setData(result.data); setError('')
+      const overview = result.data || {}
+      setData({
+        ...overview,
+        activeRides: Array.isArray(overview.activeRides) ? overview.activeRides : [],
+        requests: Array.isArray(overview.requests) ? overview.requests : [],
+        drivers: Array.isArray(overview.drivers) ? overview.drivers : [],
+        zones: Array.isArray(overview.zones) ? overview.zones : [],
+        fairness: Array.isArray(overview.fairness) ? overview.fairness : [],
+        charts: {
+          ...overview.charts,
+          daily: Array.isArray(overview.charts?.daily) ? overview.charts.daily : [],
+          vehicleDemand: Array.isArray(overview.charts?.vehicleDemand) ? overview.charts.vehicleDemand : [],
+        },
+      }); setError('')
     } catch (err) { setError(err.message) }
     finally { setLoading(false); setRefreshing(false) }
   }, [dateRange])
@@ -130,11 +143,11 @@ export default function AdminDashboard() {
     try {
       const params = new URLSearchParams({ page, status: statusFilter, search, ...dateRange })
       const result = await api(`/api/admin/rides?${params}`)
-      setRides(result.data.rides); setPages(result.data.pages); setRideTotal(result.data.total)
+      setRides(Array.isArray(result.data?.rides) ? result.data.rides : []); setPages(result.data?.pages || 1); setRideTotal(result.data?.total || 0)
     } catch (err) { setError(err.message) }
   }, [page, statusFilter, search, dateRange])
   const loadActivity = useCallback(async () => {
-    try { const result = await api('/api/admin/activity'); setActivity(result.data.events) }
+    try { const result = await api('/api/admin/activity'); setActivity(Array.isArray(result.data?.events) ? result.data.events : []) }
     catch (err) { setError(err.message) }
   }, [])
   const refreshAll = useCallback(async (background = true) => { await Promise.all([loadOverview(background), loadRides(), loadActivity()]) }, [loadOverview, loadRides, loadActivity])
@@ -164,7 +177,9 @@ export default function AdminDashboard() {
     const anchor = document.createElement('a'); anchor.href = url; anchor.download = 'rideflow-activity.csv'; anchor.click(); URL.revokeObjectURL(url)
   }
   const onlineDrivers = data?.drivers || []
-  const mapRides = data ? [...data.activeRides, ...data.requests.filter(request => !data.activeRides.some(active => active.id === request.id))] : []
+  const activeRides = Array.isArray(data?.activeRides) ? data.activeRides : []
+  const pendingRequests = Array.isArray(data?.requests) ? data.requests : []
+  const mapRides = [...activeRides, ...pendingRequests.filter(request => !activeRides.some(active => active.id === request.id))]
   const empty = loading && !data
 
   return <div className={`admin-app${collapsed ? ' sidebar-collapsed' : ''}`}>

@@ -92,7 +92,7 @@ export default function PassengerPage() {
       try {
         const params = new URLSearchParams({ lat: pickup.latitude, lng: pickup.longitude, vehicleType })
         const result = await api(`/api/rides/nearby?${params}`)
-        if (active) { setDrivers(result.data.drivers); setDriversError('') }
+        if (active) { setDrivers(Array.isArray(result.data?.drivers) ? result.data.drivers : []); setDriversError('') }
       } catch (error) { if (active) setDriversError(error.message) }
       finally { if (active) { setDriversLoading(false); firstLoad = false } }
     }

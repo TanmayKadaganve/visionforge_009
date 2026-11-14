@@ -78,7 +78,12 @@ export default function DriverDashboard() {
   const [activeRoute, setActiveRoute] = useState(null)
   const gpsWatch = useRef(null)
   const refresh = useCallback(async () => {
-    try { const result = await api('/api/driver/dashboard'); setData(result.data); setDemo(false); setError('') }
+    try {
+      const result = await api('/api/driver/dashboard')
+      const dashboard = result.data || {}
+      setData({ ...sample, ...dashboard, requests: Array.isArray(dashboard.requests) ? dashboard.requests : [], history: Array.isArray(dashboard.history) ? dashboard.history : [], zones: Array.isArray(dashboard.zones) ? dashboard.zones : [], metrics: { ...sample.metrics, ...dashboard.metrics }, user: dashboard.user || sample.user })
+      setDemo(false); setError('')
+    }
     catch (err) { setDemo(true); setError(err.message) }
   }, [authUser])
   useEffect(() => { refresh(); const poll = window.setInterval(refresh, 5000); const tick = window.setInterval(() => setNow(Date.now()), 1000); return () => { window.clearInterval(poll); window.clearInterval(tick); if (gpsWatch.current !== null) navigator.geolocation?.clearWatch(gpsWatch.current) } }, [refresh])
@@ -131,8 +136,8 @@ export default function DriverDashboard() {
     setBusy(true); setError('')
     try {
       if (demo) {
-        if (action === 'accept') setData(current => ({ ...current, requests: current.requests.filter(r => r.id !== ride.id), activeRide: { ...ride, status: 'Accepted', acceptedAt: new Date().toISOString(), pickupDeadlineAt: new Date(Date.now() + (ride.pickupEtaMinutes + 5) * 60000).toISOString() }, metrics: { ...current.metrics, activeRides: 1 } }))
-        else if (action === 'reject') setData(current => ({ ...current, requests: current.requests.filter(r => r.id !== ride.id), metrics: { ...current.metrics, rejectedCount: current.metrics.rejectedCount + 1, acceptanceRate: Math.round(current.metrics.acceptedCount / (current.metrics.acceptedCount + current.metrics.rejectedCount + 1) * 100) } }))
+        if (action === 'accept') setData(current => ({ ...current, requests: (current.requests || []).filter(r => r.id !== ride.id), activeRide: { ...ride, status: 'Accepted', acceptedAt: new Date().toISOString(), pickupDeadlineAt: new Date(Date.now() + (ride.pickupEtaMinutes + 5) * 60000).toISOString() }, metrics: { ...current.metrics, activeRides: 1 } }))
+        else if (action === 'reject') setData(current => ({ ...current, requests: (current.requests || []).filter(r => r.id !== ride.id), metrics: { ...current.metrics, rejectedCount: current.metrics.rejectedCount + 1, acceptanceRate: Math.round(current.metrics.acceptedCount / (current.metrics.acceptedCount + current.metrics.rejectedCount + 1) * 100) } }))
         else setData(current => ({ ...current, activeRide: status === 'Completed' || status === 'Cancelled' ? null : { ...current.activeRide, status }, metrics: { ...current.metrics, activeRides: status === 'Completed' || status === 'Cancelled' ? 0 : 1, completedRides: current.metrics.completedRides + (status === 'Completed' ? 1 : 0), todayEarnings: current.metrics.todayEarnings + (status === 'Completed' ? ride.estimatedFare : 0) }, history: status === 'Completed' ? [{ ...ride, status, completedAt: new Date().toISOString() }, ...current.history] : current.history }))
         setMessage(`Demo: ride ${action === 'status' ? status.toLowerCase() : action + 'ed'}.`)
       } else {
